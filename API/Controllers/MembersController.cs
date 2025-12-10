@@ -1,22 +1,27 @@
+using System.Security.Cryptography;
+using System.Text;
 using API.Data;
 using API.Entitites;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-       public class  MembersController(AppDbContext context) : Controller
+    
+    // [Authorize] means all endpoints are authorize , required logged-in user to access
+    [Authorize]
+       public class  MembersController(AppDbContext context) : BaseApiController
     {
+         [AllowAnonymous]
         [HttpGet]
         public  async Task< ActionResult<IReadOnlyList<AppUser>> >GetMembers()
         {
             var members = await context.Users.ToListAsync();
             return members;
         }
-
+       
         [HttpGet("{id}")]
         public  async Task<ActionResult<AppUser>> GetMember(string id)
         {
@@ -24,5 +29,8 @@ namespace API.Controllers
             if(member == null)return NotFound();
             return member;
         }
+
+       
+
     }
 }
