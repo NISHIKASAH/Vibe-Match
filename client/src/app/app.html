@@ -1,9 +1,4 @@
-<h1 class="text-3xl font-bold underline" >{{title}}!</h1>
 
+<app-nav></app-nav>
 
-<ul>
-  @for (member of members(); track member.id) {
-    <li>{{member.id}} - {{member.displayName}}</li>
-  }
-</ul>
-<button class="btn btn-info">Info</button>
+<app-home [membersFromApp]="members()"/>
