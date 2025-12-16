@@ -9,12 +9,12 @@ import { User } from '../../types/user';
   styleUrl: './home.css',
 })
 export class Home {
-  @Input({required : true }) membersFromApp : User[] = []; //implemented parent to  child 
+  // @Input({required : true }) membersFromApp : User[] = []; //implemented parent to  child 
   protected registerMode = signal(false);
 
   showRegister(value : any){
     this.registerMode.set(value);
-    console.log( "membersFromApp" , this.membersFromApp);
+    // console.log( "membersFromApp" , this.membersFromApp);
     
 
   }
