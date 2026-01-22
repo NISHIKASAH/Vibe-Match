@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using API.Data;
 using API.Entitites;
+using API.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,28 +10,35 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    
+
     // [Authorize] means all endpoints are authorize , required logged-in user to access
     [Authorize]
-       public class  MembersController(AppDbContext context) : BaseApiController
+    public class MembersController(IMemberRepository memberRepository) : BaseApiController
     {
-         [AllowAnonymous]
+        [AllowAnonymous]
         [HttpGet]
-        public  async Task< ActionResult<IReadOnlyList<AppUser>> >GetMembers()
+        public async Task<ActionResult<IReadOnlyList<Member>>> GetMembers()
         {
-            var members = await context.Users.ToListAsync();
-            return members;
+            return Ok(await memberRepository.GetMembersAsync());
+
         }
-       
+
         [HttpGet("{id}")]
-        public  async Task<ActionResult<AppUser>> GetMember(string id)
+        public async Task<ActionResult<Member>> GetMember(string id)
         {
-            var member= await context.Users.FindAsync(id);
-            if(member == null)return NotFound();
+            var member = await memberRepository.GetMemberByIdAsync(id);
+            if (member == null) return NotFound();
             return member;
         }
 
-       
+        [HttpGet("{id}/photos")]
+        public async Task<ActionResult<Member>> GetMemberPhotos (string id)
+        {
+            return Ok(await memberRepository.GetPhotosForMemberAsync(id));
+            
+        }
+
+
 
     }
 }

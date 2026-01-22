@@ -1,0 +1,67 @@
+[
+  {
+    "Id": "user-1",
+    "Email": "alice.johnson@example.com",
+    "DisplayName": "Alice Johnson",
+    "Gender": "Female",
+    "DateOfBirth": "1995-05-12",
+    "City": "New York",
+    "Country": "USA",
+    "ImageUrl": "https://example.com/images/alice.jpg",
+    "Description": "Software engineer who loves hiking and photography.",
+    "Created": "2024-07-01T10:00:00Z",
+    "LastActive": "2025-01-20T15:30:00Z"
+  },
+  {
+    "Id": "user-2",
+    "Email": "michael.smith@example.com",
+    "DisplayName": "Michael Smith",
+    "Gender": "Male",
+    "DateOfBirth": "1990-08-23",
+    "City": "London",
+    "Country": "UK",
+    "ImageUrl": "https://example.com/images/michael.jpg",
+    "Description": "Tech enthusiast and coffee lover.",
+    "Created": "2024-01-10T09:00:00Z",
+    "LastActive": "2025-01-21T08:00:00Z"
+  },
+  {
+    "Id": "user-3",
+    "Email": "sophia.martinez@example.com",
+    "DisplayName": "Sophia Martinez",
+    "Gender": "Female",
+    "DateOfBirth": "1998-02-03",
+    "City": "Madrid",
+    "Country": "Spain",
+    "ImageUrl": "https://example.com/images/sophia.jpg",
+    "Description": "Traveler, foodie, and amateur photographer.",
+    "Created": "2024-10-05T12:00:00Z",
+    "LastActive": "2025-01-19T18:45:00Z"
+  },
+  {
+    "Id": "user-4",
+    "Email": "david.chen@example.com",
+    "DisplayName": "David Chen",
+    "Gender": "Male",
+    "DateOfBirth": "1987-11-30",
+    "City": "Toronto",
+    "Country": "Canada",
+    "ImageUrl": "https://example.com/images/david.jpg",
+    "Description": "Fitness coach and nutrition advisor.",
+    "Created": "2023-06-15T14:00:00Z",
+    "LastActive": "2025-01-14T10:20:00Z"
+  },
+  {
+    "Id": "user-5",
+    "Email": "emma.wilson@example.com",
+    "DisplayName": "Emma Wilson",
+    "Gender": "Female",
+    "DateOfBirth": "2000-01-15",
+    "City": "Sydney",
+    "Country": "Australia",
+    "ImageUrl": "https://example.com/images/emma.jpg",
+    "Description": "University student studying design.",
+    "Created": "2024-12-01T11:30:00Z",
+    "LastActive": "2025-01-21T09:45:00Z"
+  }
+]
